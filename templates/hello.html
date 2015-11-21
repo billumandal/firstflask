@@ -1,0 +1,21 @@
+{% extends 'template.html' %}
+{% block content %}
+	<h2>Welcome! You are now logged in.</h2>
+	<br/>
+	<a href="/logout">Logout</a>
+	<br/>
+	<br/>
+	<h3>Sales Data - Region 1:</h3>
+	<table style='width:20%; text-align:center;' cellpadding="2"; cellspacing="5"  border='1' >
+	<tr>
+		<th>Representative<br/>Name</th>
+		<th>Sales<br/>Figure</th>
+	</tr>
+	{% for item in sales %}
+	<tr>
+		<td>{{ item.rep_name }}</td>
+		<td>{{ item.amount }}</td>
+	</tr>
+	{% endfor %}
+	</table>
+{% endblock %}
